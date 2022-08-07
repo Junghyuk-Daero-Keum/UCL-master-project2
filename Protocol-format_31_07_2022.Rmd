@@ -1,0 +1,234 @@
+---
+title: "Meta-analysis protocol format"
+author: "Junghyuk Keum"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    theme: readable
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Andy Purvis’s lab, Natural History Museum; London, United Kingdom
+
+```{r, include=FALSE}
+Taxa_of_interest <- "Bumble Bee"
+Threat_of_interest <- "Pesticide"
+Biodiversity_of_interest <- "Abundance"
+Geography_of_interest <- "Asia"
+```
+
+
+# Abstract
+This document provides a format (template) for meta-analysis protocol to be used in the GLiTRS project in Andy Purvis’s lab, NHM.
+&nbsp;  
+
+# Background 
+
+The insects are globally declining. Anthropocene pressure is considered as the major cause. More and more empirical evidence is being found. Hallmann et al. (2017) claimed that flying insect biomass have declined approximately 76% in multiple areas of Germany during 1989~2016. Sánchez-Bayo and Wyckhuys (2019) claimed that within several decades, insects will decline by 40% across the globe. Such circumstances have grown concerns not only among academics but also the general public as well. The scientific community and the mass media are both warning about the catastrophic results of insect decline that will not only damage the ecosystem but the human society as well. For instance, in 2012, estimated 34.0 billion USD worth service was provided by the pollinator insects in USA (Jordan et al., 2021); various research are suggesting signs of decline in pollinator insects (Biesmeijer et al., 2006; Millard et al., 2021; Powney et al., 2021). However, unfortunately, the exact rate and status of the decline remains largely unknown. The situation is different among taxa, cause of decline, and region. Reports are difficult to integrate as they are fractured into limited regional data collections, each possessing different target taxa, methodology and arguments. 
+
+The GLiTRS is an international project run by the cooperation of multiple institutes across UK and South Africa. The aim of the project is to conduct a global threat-response model describing how the insect biome is responding to anthropogenic threats. By identifying individual response of particular insect taxa to specific threats in certain regions, we anticipate gaining global perspective of insect decline and figure out to which degree such phenomenon is predictable. In order to do that, the project plans to use methods such as meta-analysis, correlative relationships and collating expert opinions.
+&nbsp;  
+
+# Objectives 
+I aim to aid the GLiTRS project by running a meta-analysis that addresses the effect of a (certain anthropogenic threat) on (certain type biodiversity metric) (e.g., biomass, species richness, abundance) of a (certain insect taxa), regarding (geographical factors). Therefore, the core question of this meta-analysis will be: 
+‘what is the effect of x application on y z in a’. 
+(e.g., What is the effect of pesticide application on lepidopteran species abundance in Korea?)
+
+Threat: `r Threat_of_interest`
+
+Target taxa: `r Taxa_of_interest`
+
+Biodiversity metric: `r Biodiversity_of_interest`
+
+Geography: `r Geography_of_interest`
+&nbsp;  
+
+# Explanation of terms
+## Definition and background of threat
+(Explain what our threat is and why you chose it in reasonable context.)
+
+(Adivesd threat list in IUCN threat classification scheme: https://www.iucnredlist.org/resources/threat-classification-scheme)
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+## Definition and background of target taxa 
+(Adviesd taxa: Order)
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+## Definition and background of biodiversity metric
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+## Definition and background of geography 
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+# Methods 
+Our meta-analysis will be conducted in the following steps. First, I will search for relevant literatures. Then, a screening process will be done in order to leave only the studies of interest. Data will be extracted from those studies and will be recorded in a separate Excel datasheet. The data will be then used to run a meta-analysis using the metafor R package (Viechtbauer, 2010) in R software. Followed by a sensitivity analysis and a bias assessment to ensure the quality of the meta-analysis.  
+
+## Search strategy 
+### Data source
+I will conduct our search of literature from the following database: 
+
+(e.g., I will search literature form database Scopus and Web of science. In addition, I will search for grey literature in Google scholar).
+
+### Search string 
+I will conduct our proto search string according to the PICO (Population, intervention, Comparison, Outcome) elements.  
+Our PICO elements are as following: 
+
+P: `r Taxa_of_interest`
+
+I: `r Threat_of_interest`
+
+C:
+
+O: `r Biodiversity_of_interest`
+
+(e.g., P: Odonatans, I: Pesticide application Y / N, C: Comparison, O: Abundance).
+
+&nbsp;  
+
+Therefore, our proto search string will be as following:
+
+```{r, include=FALSE}
+Proto_search_string <- ""
+
+```
+
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+(e.g., (Odonata* OR Dragonfl* OR Damselfl*) AND (Pesticide OR insecticide) AND (Compar* OR Contrast*) AND (Abundance OR richness OR Occupancy)
+
+After iterative process of adding and excluding terms to maximize the number of relevant literatures found, I will finalize our final search string.
+
+In order to record the process of conducting our search string, I will conduct a flow chart of how many hits each search string returns and how many relevant papers are found in the first 20 papers. 
+
+## Deduplication
+(Explain how you will erase overlapping literatures from multiple databases. Suggested method Bramer et al. (2016)).
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+## Screening criterion
+In order to acquire only the study of interest, I will perform 3 rounds of screening process. 1st round, I will skim through titles and abstracts of literatures to exclude obviously irrelevant literatures. 2nd round, I will run through titles and abstracts again but with more precision according to the inclusion / exclusion criterion to leave studies of interest. 3rd round, I will perform a full text screening to exclude studies that failed to satisfy the criterions.
+I will record how many literatures were left after every round. Reason of exclusion will be recorded for excluded studies.   
+
+### Criterion of inclusion 
+(I will only include studies that~)
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+### Criterion of exclusion 
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+## Study quality assessment
+I assessed the quality of the studies following these standards:
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+
+## Data extraction 
+I will extract bibliographic information, qualitative information and effect size from final literatures according to the data input spreadsheet (for details see datasheet in appendix). 
+
+Bibliographic information: 
+
+Literature ID, Study ID (in case multiple studies or comparisons exist within one literature), Title, Author, Year, Journal, Volume, Pages, URL, DOI, Database
+
+Qualitative information:
+
+Order, Family, Species, Threat type, Threat name, Country, Latitude, Longitude, Experimental year, Agriculture, Life stage, Sampling method, Biodiversity metric, Unit, Extraction source, Additional biodiversity metric, Study quality.
+
+Effect size: 
+
+When required data is only given within figures, I will use metaDigitise (Pick et al., 2018) R package to extract data. 
+
+## Meta-analysis
+I will perform our meta-analysis using the metafor (Viechtbauer, 2010)) R package. 
+
+(See Viechtbauer (2010) for detailed methods on how to perform multiple forms of meta-analysis).
+&nbsp;  
+
+# Assessing bias
+
+## Publication bias
+When there are more than 10 literatures (Borenstien, 2011), I will conduct a funnel plot using the funnel() function from the metafor R package in order to detect possible publication bias within the literatures. 
+
+
+
+## Reviewer bias 
+I will perform a Kappa test (Galton, 1892) in order to assess reviewer bias (in case more than one reviewer).
+&nbsp;  
+
+# Sensitivity analysis
+I will perform a sensitivity analysis on the results by running the meta-analysis again excluding low quality literatures. 
+&nbsp;  
+
+# Reference 
+
+Biesmeijer, J.C., Roberts, S.P., Reemer, M., Ohlemuller, R., Edwards, M., Peeters, T., Schaffers, A.P., Potts, S.G., Kleukers, R., Thomas, C.D., Settele, J. & Kunin, W.E. (2006) Parallel declines in pollinators and insect-pollinated plants in Britain and the Netherlands. Science, 313, 351-354.
+
+Borenstein, M.H.L.V.H.J.P.T.R.H. (2011) Introduction to meta-analysis.
+
+Bramer, W. M., Giustini, D., De Jong, G. B., Holland, L., & Bekhuis, T. (2016). De-duplication of database search results for systematic reviews in endnote. Journal of the Medical Library Association, 104(3), 240–243. https://doi.org/10.3163/1536-5050.104.3.014.
+
+Galton, F. (1892) Finger Prints, Macmillan, London.
+
+Hallmann, C.A., Sorg, M., Jongejans, E., Siepel, H., Hofland, N., Schwan, H., Stenmans, W., Muller, A., Sumser, H., Horren, T., Goulson, D. & de Kroon, H. (2017) More than 75 percent decline over 27 years in total flying insect biomass in protected areas. PLoS One, 12, e0185809.
+
+Jordan, A., Patch, H.M., Grozinger, C.M. & Khanna, V. (2021) Economic Dependence and Vulnerability of United States Agricultural Sector on Insect-Mediated Pollination Service. Environ Sci Technol, 55, 2243-2253.
+
+Millard, J., Outhwaite, C.L., Kinnersley, R., Freeman, R., Gregory, R.D., Adedoja, O., Gavini, S., Kioko, E., Kuhlmann, M., Ollerton, J., Ren, Z.X. & Newbold, T. (2021) Global effects of land-use intensity on local pollinator biodiversity. NAT COMMUN, 12, 2902.
+
+Pick, J.L., Nakagawa, S., Noble D.W.A. (2018) Reproducible, flexible and high-throughput data extraction from primary literature: The metaDigitise R package. Biorxiv.
+https://doi.org/10.1101/247775.
+
+Powney, G.D., Carvell, C., Edwards, M., Morris, R.K.A., Roy, H.E., Woodcock, B.A. & Isaac, N.J.B. (2019) Widespread losses of pollinating insects in Britain. NAT COMMUN, 10, 1018.
+
+Sánchez-Bayo, F., Wyckhuys, K. A. G. (2019) Worldwide decline of the entomofauna: A review of its       drivers. Biological Conservation, 232, 8-27. 
+
+Viechtbauer, W. (2010). Conducting meta-analyses in R with the metafor package. Journal of Statistical  software, 36(3), 1-48. https://doi.org/10.18637/jss.v036.i03.
+
